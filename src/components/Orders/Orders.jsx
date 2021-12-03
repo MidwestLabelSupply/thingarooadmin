@@ -12,12 +12,16 @@ function Orders({
   setOrderModal,
   generateUrls,
   getCustomers,
-  deleteOrder,
 }) {
   const editOrder = (row) => {
     setOrderModal("editOrder");
     setModalData({ modalName: "editOrder", row });
   };
+
+  const deleteOrder = id => {
+    setOrderModal("deleteOrder");
+    setModalData({ modalName: "deleteOrder", id });
+  }
 
   const columns = useMemo(() => {
     return [

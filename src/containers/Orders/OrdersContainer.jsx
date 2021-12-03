@@ -10,6 +10,7 @@ import AddOrder from "../../components/Modals/AddOrder";
 import UpdateOrder from "../../components/Modals/UpdateOrder";
 import { ExportToCsv } from "export-to-csv";
 import { orderDetailsApiCaller } from "../../utils/network-request/orderDetails-api-call";
+import DeleteOrder from "../../components/Modals/DeleteOrder";
 
 export default function OrdersContainer() {
   const { setIsLoggedIn, setClientModal } = useContext(GlobalDataContext);
@@ -186,7 +187,6 @@ export default function OrdersContainer() {
         setOrderModal={setOrderModal}
         generateUrls={generateUrls}
         getCustomers={getCustomers}
-        deleteOrder={deleteOrder}
       />
       <Modal
         open={orderModal !== ""}
@@ -200,6 +200,12 @@ export default function OrdersContainer() {
           <AddOrder setOrderModal={setOrderModal} />
         ) : orderModal === "editOrder" ? (
           <UpdateOrder modalData={modalData} setOrderModal={setOrderModal} />
+        ) : orderModal === "deleteOrder" ? (
+          <DeleteOrder
+            modalData={modalData}
+            setOrderModal={setOrderModal}
+            deleteOrder={deleteOrder}
+          />
         ) : (
           <div id="orderModal">{null}</div>
         )}
