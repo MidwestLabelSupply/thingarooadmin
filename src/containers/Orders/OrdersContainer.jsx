@@ -53,7 +53,7 @@ export default function OrdersContainer() {
       const generatedUrls = response.result.urls?.map((val) => {
         return {
           url:
-            "https://qr-dan-verify-vivekkm897.vercel.app/" +
+            "https://verify.thingaroo.com/" +
             encodeURIComponent(companyName) +
             "/" +
             val.url,
@@ -99,7 +99,7 @@ export default function OrdersContainer() {
             return {
               unit,
               url:
-                "https://qr-dan-verify-vivekkm897.vercel.app/" +
+                "https://verify.thingaroo.com/" +
                 encodeURIComponent(companyName) +
                 "/" +
                 url,

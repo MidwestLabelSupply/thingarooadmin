@@ -63,7 +63,7 @@ function OrderDetails({ rows, order, setModalData, setOrderModal }) {
               </div>
               <a
                 href={
-                  "https://qr-dan-verify-vivekkm897.vercel.app/" +
+                  "https://verify.thingaroo.com/" +
                   encodeURIComponent(order?.companyName) +
                   "/" +
                   data?.row?.url
